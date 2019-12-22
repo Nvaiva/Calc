@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="firstWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="689.0" style="-fx-background-color: #FDFBC1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <AnchorPane fx:id="enterData" layoutX="14.0" layoutY="76.0" prefHeight="614.0" prefWidth="310.0" style="-fx-background-color: #716B6B;" stylesheets="@../style.css">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="134.0" text="Loan amount" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="loanAmount" alignment="BOTTOM_LEFT" focusColor="#fdfbc1" layoutX="14.0" layoutY="45.0" prefHeight="26.0" prefWidth="203.0" promptText="5000€" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXTextField>
+            <Label layoutX="14.0" layoutY="92.0" prefHeight="18.0" prefWidth="123.0" text="Loan term " textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="loanTermYears" alignment="BOTTOM_CENTER" focusColor="#fdfbc1" layoutX="14.0" layoutY="126.0" prefHeight="26.0" prefWidth="54.0" promptText="12" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1" />
+            <Label layoutX="14.0" layoutY="175.0" text="Interest rate" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="interestRate" focusColor="#fdfbc1" layoutX="14.0" layoutY="207.0" prefHeight="26.0" prefWidth="203.0" promptText="2.2" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1" />
+            <Label layoutX="196.0" layoutY="211.0" text="\%" textFill="WHITE" />
+            <Label layoutX="14.0" layoutY="261.0" text="Loan repayment schedule type" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXCheckBox fx:id="linear" checkedColor="#513131" layoutX="15.0" layoutY="298.0" onMouseClicked="#uncheckAnnuity" prefHeight="22.0" prefWidth="78.0" text="Linear" textFill="WHITE" unCheckedColor="#9a9a9a">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXCheckBox fx:id="annuity" checkedColor="#513131" layoutX="15.0" layoutY="330.0" onMouseClicked="#uncheckLinear" text="Annuity" textFill="#fdfdfd" unCheckedColor="#9a9a9a">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXCheckBox>
+            <Label layoutX="75.0" layoutY="129.0" prefHeight="19.0" prefWidth="38.0" text="years" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="loanTermMonths" alignment="BOTTOM_CENTER" focusColor="#fdfbc1" layoutX="121.0" layoutY="126.0" prefHeight="26.0" prefWidth="54.0" promptText="6" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1" />
+            <Label layoutX="182.0" layoutY="129.0" prefHeight="19.0" prefWidth="70.0" text="months" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Button layoutX="95.0" layoutY="378.0" mnemonicParsing="false" onMouseClicked="#calculateIsPressed" style="-fx-border-color: #383535; -fx-border-radius: 10;" styleClass="button2" stylesheets="@../style.css" text="Calculate" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Line endX="167.20001220703125" layoutX="138.0" layoutY="430.0" startX="-136.99998474121094" stroke="#414040" />
+            <Label layoutX="13.0" layoutY="472.0" prefHeight="22.0" prefWidth="235.0" text="Time perdiod of payment holidays" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="13.0" layoutY="510.0" prefHeight="31.0" prefWidth="135.0" text="Start from (month)" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="paymentHolidaysStart" alignment="BOTTOM_CENTER" focusColor="#fdfbc1" layoutX="168.0" layoutY="513.0" prefHeight="26.0" prefWidth="98.0" promptText="13" unFocusColor="#fdfbc1" />
+            <Label layoutX="23.0" layoutY="546.0" prefHeight="31.0" prefWidth="89.0" text="Ends (month)" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="paymentHolidaysEnd" alignment="BOTTOM_CENTER" focusColor="#fdfbc1" layoutX="172.0" layoutY="549.0" prefHeight="26.0" prefWidth="98.0" promptText="20" unFocusColor="#fdfbc1" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="results" layoutX="320.0" layoutY="76.0" prefHeight="614.0" prefWidth="262.0" style="-fx-background-color: #716B6B;">
+         <children>
+            <Label layoutX="66.0" layoutY="86.0" text="Total payment sum" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="totalPaymentSum" alignment="CENTER" focusColor="#fdfbc1" layoutX="62.0" layoutY="125.0" promptText="5800€" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1" />
+            <JFXTextField fx:id="totalInterestRate" alignment="CENTER" focusColor="#fdfbc1" layoutX="62.0" layoutY="247.0" promptText="800€" styleClass="jfx-text-field" stylesheets="@../style.css" unFocusColor="#fdfbc1" />
+            <Label layoutX="66.0" layoutY="210.0" text="Total interest amount " textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="paymentHolidaysCalculate" layoutX="68.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#paymentHolidaysCalculateIsPressed" prefHeight="34.0" prefWidth="82.0" style="-fx-border-color: #383535; -fx-border-radius: 10;" styleClass="button2" stylesheets="@../style.css" text="calculate" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="8.0" layoutY="473.0" prefHeight="22.0" prefWidth="221.0" text="Payment holidays interest rate" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Line endX="211.0" layoutX="49.0" layoutY="430.0" startX="-49.0" stroke="#414040" />
+            <Label layoutX="-92.0" layoutY="436.0" text="Payment holidays (optional)" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="paymentHolidaysInterest" alignment="BOTTOM_CENTER" focusColor="#fdfbc1" layoutX="7.0" layoutY="517.0" prefHeight="26.0" prefWidth="203.0" promptText="0.5" unFocusColor="#fdfbc1" />
+            <Label layoutX="192.0" layoutY="521.0" text="\%" textFill="WHITE" />
+            <Button layoutX="82.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#saveToFilePressed" style="-fx-border-color: #383535; -fx-border-radius: 10;" styleClass="button2" stylesheets="@../style.css" text="Save to file" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+      <AnchorPane fx:id="title" layoutX="14.0" layoutY="13.0" prefHeight="66.0" prefWidth="566.0" style="-fx-background-color: #716B6B;">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="17.0" prefHeight="18.0" prefWidth="260.0" text="Loan calculator" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="578.0" layoutY="13.0" prefHeight="677.0" prefWidth="98.0" style="-fx-background-color: #4b4f4e;">
+         <children>
+            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="13.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#graphButtonPressed" prefHeight="41.0" prefWidth="70.0" styleClass="button2" stylesheets="@../style.css" text="Graph" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/graph.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="13.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#tableButtonPressed" prefHeight="66.0" prefWidth="70.0" styleClass="button2" stylesheets="@../style.css" text="Table" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/spreadsheet-cell.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

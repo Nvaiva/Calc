@@ -1,0 +1,20 @@
+.jfx-text-field {
+    -fx-prompt-text-fill:#ada9a8;
+    -fx-text-fill: white;
+}
+.button2
+{
+    -fx-background-color:  #716B6B;
+    -fx-background-radius :  20;
+}
+.button2:hover
+{
+    -fx-background-color : #999999;
+    -fx-background-radius :  20;
+}
+.button2:pressed
+{
+    -fx-background-color : #2F2B43 ;
+    -fx-background-radius :  20;
+}
+
